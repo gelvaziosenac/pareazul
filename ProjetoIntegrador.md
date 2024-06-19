@@ -3,6 +3,7 @@
     * Adicionar as classes abaixo na apiareaazul
         ```
         apiareaazul/main/model/Perfil.java
+        apiareaazul/main/model/Estacionamento.java
         ```
 * Alteração 01
      * Alterar o banco de dados para o banco do seu grupo em:
@@ -14,11 +15,13 @@
         * Veiculo
         * Usuario
         * Perfil
+        * Estacionamento
     * Criar os arquivos Repository de cada model:
         * Cartao
         * Veiculo
         * Usuario
         * Perfil
+        * Estacionamento
 
 * Alteração 03
     * Na Classe Repository, inicialmente testar apenas com a classe herdada para o metodo findAll()
@@ -66,3 +69,7 @@
         * Metodo POST e rota = "perfil" que chama a funcao createCadastro()
         * Deve inserir um novo perfil no banco de dados
     
+* Alteração 05 - Estacionar
+    * Ao clicar em confirmar(), deve chamar a rota da api de nome "estacionamento"
+        * Metodo POST e rota = "perfil" que chama a funcao createCadastro()
+        * Deve inserir um novo perfil no banco de dados
