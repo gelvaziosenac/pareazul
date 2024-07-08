@@ -1,1 +1,0 @@
-Falta a acao de comprar
