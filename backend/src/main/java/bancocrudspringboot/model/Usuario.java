@@ -13,8 +13,10 @@ import javax.persistence.*;
 public class Usuario {
 
     private long id;
+    
     private String telefone;
     private String senha;
+
     private String cidade;
 
     @Id

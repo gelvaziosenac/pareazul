@@ -116,19 +116,11 @@ function logout() {
 }
 
 function login() {
-
-    console.log("Aqui...");
-
-    // REDIRECIONA PARA A HOME
-    window.location.href = "index.html";
-
-    return true;
-
-    const email = document.querySelector("#login-email").value;
-    const senha = document.querySelector("#login-senha").value;
+    const telefone = document.querySelector("#telefone").value;
+    const senha = document.querySelector("#senha").value;
 
     const body = {
-        email : email,
+        telefone : telefone,
         senha : senha
     };
 

@@ -4,10 +4,6 @@ function gravarCartao(){
 
     const body = {
         email : email,
-        email : email,
-        email : email,
-        email : email,
-        email : email,
         senha : senha
     };
 

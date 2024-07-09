@@ -73,3 +73,15 @@
     * Ao clicar em confirmar(), deve chamar a rota da api de nome "estacionamento"
         * Metodo POST e rota = "perfil" que chama a funcao createCadastro()
         * Deve inserir um novo perfil no banco de dados
+
+[ALTERACAO AULA - 08-07-2024]
+FINALIZAR API COM AS SEGUINTES ROTAS
+USUARIO - VALIDAR O LOGIN
+
+CARTAO
+VEICULO
+ESTACIONAMENTO
+
+se der tempo
+	PERFIL 
+	
