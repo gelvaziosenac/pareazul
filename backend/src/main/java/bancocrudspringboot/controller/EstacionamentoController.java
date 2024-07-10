@@ -22,6 +22,13 @@ public class EstacionamentoController {
 	public List<Estacionamento> getAllCadastros() {
 		return this.estacionamentoRepository.findAll();
 	}
+	
+	// Listar
+	@GetMapping("/estacionamentoordenado")
+	@ResponseStatus(HttpStatus.OK)
+	public List<Estacionamento> getAllCadastrosOrdenado() {
+		return this.estacionamentoRepository.findAllOrderByIdDesc();
+	}
 		
 	// Inserir
 	@PostMapping("/estacionamento")

@@ -18,7 +18,7 @@ function listarEstacionamentos(){
 
 function cardEstacionamento(){
     const method = "GET";
-    const rota = "estacionamento";
+    const rota = "estacionamentoordenado";
     callApi(method, rota, function (aListaDados) {
         console.log(aListaDados);    
         loadDadosEstacionamento(aListaDados);        
@@ -375,7 +375,7 @@ function confirmarEstacionamento(veiculo_id){
 
             const veiculo_id = data.veiculo_id;
             console.log("veiculo_id:" + veiculo_id);
-            
+
             fecharModalEstacionamento(veiculo_id);
             listarEstacionamentos();        
         },
