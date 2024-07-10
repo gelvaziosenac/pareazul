@@ -17,9 +17,6 @@ public interface VeiculoRepository extends JpaRepository<Veiculo, Long>{
     @Query(value = "select * from veiculo where placa ilike concat('%', :placa, '%')", nativeQuery = true)
     List<Veiculo> findVeiculoByPlaca(@Param("placa")String placa);
 
-    // // perguntar pro professor porque do Optional em vez de 
-    Optional<Veiculo> findVeiculoById(long id);
-    
     List<Veiculo> findVeiculoByTipo(int tipo);
 
     List<Veiculo> findVeiculoByAno(String ano);

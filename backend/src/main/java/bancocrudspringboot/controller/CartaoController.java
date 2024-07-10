@@ -41,10 +41,9 @@ public class CartaoController {
 	// Inserir cartao
 	@PostMapping("/cartao")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Cartao createCadastro(@RequestBody Cartao cadastro) {
+	public Cartao createCadastro(@RequestBody Cartao cadastro){
 		return this.cartaoRepository.save(cadastro);
 	}
-
     
 	// alterar cartao    
 	@PutMapping("/cartao/{id}")

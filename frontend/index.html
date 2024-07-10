@@ -78,8 +78,9 @@
 
                         <div class="ant-dropdown-trigger" style="cursor: pointer;"><img
                                 src="./index_files/cdbfe0ad1b528f3fec1535d7ceccdbac.png" alt="Imagem do usuário"
-                                style="height: 28.69px;"><span class="painel-texto-simples" style="margin-left: 10px;"
-                                data-toggle="modal" data-target="#modal-perfil">
+                                style="height: 28.69px;">
+                            <span class="painel-texto-simples" style="margin-left: 10px;" data-toggle="modal"
+                                data-target="#modal-perfil">
                                 JOAO DA SILVA 03<i class="anticon anticon-down" style="margin-left: 5px;">
                                     <svg viewBox="64 64 896 896" class="" data-icon="down" width="1em" height="1em"
                                         fill="currentColor" aria-hidden="true" focusable="false">
@@ -88,7 +89,100 @@
                                         </path>
                                     </svg></i>
                             </span>
+                            <div style="position: absolute; top: 0px; left: 0px; width: 100%;">
+                                <div>
+                                    <div class="ant-dropdown  ant-dropdown-placement-bottomLeft  ant-dropdown-hidden"
+                                        style="left: 883.996px; top: 67.9962px; min-width: 219px;">
+                                        <ul class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"
+                                            role="menu">
+                                            <li class="ant-dropdown-menu-item" role="menuitem"><i
+                                                    class="anticon anticon-edit"><svg viewBox="64 64 896 896" class=""
+                                                        data-icon="edit" width="1em" height="1em" fill="currentColor"
+                                                        aria-hidden="true" focusable="false">
+                                                        <path
+                                                            d="M257.7 752c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 0 0 0-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 0 0 9.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9zm67.4-174.4L687.8 215l73.3 73.3-362.7 362.6-88.9 15.7 15.6-89zM880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32z">
+                                                        </path>
+                                                    </svg></i>Editar
+                                                perfil
+                                            </li>
+                                            <li class="ant-dropdown-menu-item" role="menuitem"><i
+                                                    class="anticon anticon-logout"><svg viewBox="64 64 896 896" class=""
+                                                        data-icon="logout" width="1em" height="1em" fill="currentColor"
+                                                        aria-hidden="false" focusable="false">
+                                                        <path
+                                                            d="M868 732h-70.3c-4.8 0-9.3 2.1-12.3 5.8-7 8.5-14.5 16.7-22.4 24.5a353.84 353.84 0 0 1-112.7 75.9A352.8 352.8 0 0 1 512.4 866c-47.9 0-94.3-9.4-137.9-27.8a353.84 353.84 0 0 1-112.7-75.9 353.28 353.28 0 0 1-76-112.5C167.3 606.2 158 559.9 158 512s9.4-94.2 27.8-137.8c17.8-42.1 43.4-80 76-112.5s70.5-58.1 112.7-75.9c43.6-18.4 90-27.8 137.9-27.8 47.9 0 94.3 9.3 137.9 27.8 42.2 17.8 80.1 43.4 112.7 75.9 7.9 7.9 15.3 16.1 22.4 24.5 3 3.7 7.6 5.8 12.3 5.8H868c6.3 0 10.2-7 6.7-12.3C798 160.5 663.8 81.6 511.3 82 271.7 82.6 79.6 277.1 82 516.4 84.4 751.9 276.2 942 512.4 942c152.1 0 285.7-78.8 362.3-197.7 3.4-5.3-.4-12.3-6.7-12.3zm88.9-226.3L815 393.7c-5.3-4.2-13-.4-13 6.3v76H488c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h314v76c0 6.7 7.8 10.5 13 6.3l141.9-112a8 8 0 0 0 0-12.6z">
+                                                        </path>
+                                                    </svg></i>Sair
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <!-- Acao Sair -->
+                         <!-- sair -->
+                          <ul>
+                              <li class="ant-dropdown-menu-item" role="menuitem" style="list-style: none;margin-top: 15px;"
+                              onclick="logout()"
+                              >
+                                  <i class="anticon anticon-logout"><svg
+                                    viewBox="64 64 896 896" class="" data-icon="logout" width="1em" height="1em"
+                                    fill="currentColor" aria-hidden="false" focusable="false">
+                                    <path
+                                    d="M868 732h-70.3c-4.8 0-9.3 2.1-12.3 5.8-7 8.5-14.5 16.7-22.4 24.5a353.84 353.84 0 0 1-112.7 75.9A352.8 352.8 0 0 1 512.4 866c-47.9 0-94.3-9.4-137.9-27.8a353.84 353.84 0 0 1-112.7-75.9 353.28 353.28 0 0 1-76-112.5C167.3 606.2 158 559.9 158 512s9.4-94.2 27.8-137.8c17.8-42.1 43.4-80 76-112.5s70.5-58.1 112.7-75.9c43.6-18.4 90-27.8 137.9-27.8 47.9 0 94.3 9.3 137.9 27.8 42.2 17.8 80.1 43.4 112.7 75.9 7.9 7.9 15.3 16.1 22.4 24.5 3 3.7 7.6 5.8 12.3 5.8H868c6.3 0 10.2-7 6.7-12.3C798 160.5 663.8 81.6 511.3 82 271.7 82.6 79.6 277.1 82 516.4 84.4 751.9 276.2 942 512.4 942c152.1 0 285.7-78.8 362.3-197.7 3.4-5.3-.4-12.3-6.7-12.3zm88.9-226.3L815 393.7c-5.3-4.2-13-.4-13 6.3v76H488c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h314v76c0 6.7 7.8 10.5 13 6.3l141.9-112a8 8 0 0 0 0-12.6z">
+                                </path>
+                            </svg></i>Sair
+                        </li>
+                    </ul>
+                        <div style="position: absolute; top: 0px; left: 0px; width: 100%;">
+                            <div>
+                                <div class="ant-dropdown  ant-dropdown-placement-bottomLeft  ant-dropdown-hidden"
+                                    style="left: 883.996px; top: 67.9962px; min-width: 219px;">
+                                    <ul class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"
+                                        role="menu">
+                                        <li class="ant-dropdown-menu-item" role="menuitem">
+                                            <i class="anticon anticon-logout"><svg
+                                                    viewBox="64 64 896 896" class="" data-icon="logout" width="1em" height="1em"
+                                                    fill="currentColor" aria-hidden="false" focusable="false">
+                                                    <path
+                                                        d="M868 732h-70.3c-4.8 0-9.3 2.1-12.3 5.8-7 8.5-14.5 16.7-22.4 24.5a353.84 353.84 0 0 1-112.7 75.9A352.8 352.8 0 0 1 512.4 866c-47.9 0-94.3-9.4-137.9-27.8a353.84 353.84 0 0 1-112.7-75.9 353.28 353.28 0 0 1-76-112.5C167.3 606.2 158 559.9 158 512s9.4-94.2 27.8-137.8c17.8-42.1 43.4-80 76-112.5s70.5-58.1 112.7-75.9c43.6-18.4 90-27.8 137.9-27.8 47.9 0 94.3 9.3 137.9 27.8 42.2 17.8 80.1 43.4 112.7 75.9 7.9 7.9 15.3 16.1 22.4 24.5 3 3.7 7.6 5.8 12.3 5.8H868c6.3 0 10.2-7 6.7-12.3C798 160.5 663.8 81.6 511.3 82 271.7 82.6 79.6 277.1 82 516.4 84.4 751.9 276.2 942 512.4 942c152.1 0 285.7-78.8 362.3-197.7 3.4-5.3-.4-12.3-6.7-12.3zm88.9-226.3L815 393.7c-5.3-4.2-13-.4-13 6.3v76H488c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h314v76c0 6.7 7.8 10.5 13 6.3l141.9-112a8 8 0 0 0 0-12.6z">
+                                                    </path>
+                                                </svg></i>Sair
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="position: absolute; top: 0px; left: 0px; width: 100%;">
+        
+        
+                            <div>
+            <div class="ant-dropdown  ant-dropdown-placement-bottomLeft  ant-dropdown-hidden"
+                style="left: 883.996px; top: 67.9962px; min-width: 219px;">
+                <ul class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"
+                    role="menu">
+                    <li class="ant-dropdown-menu-item" role="menuitem"><i class="anticon anticon-edit"><svg
+                                viewBox="64 64 896 896" class="" data-icon="edit" width="1em" height="1em"
+                                fill="currentColor" aria-hidden="true" focusable="false">
+                                <path
+                                    d="M257.7 752c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 0 0 0-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 0 0 9.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9zm67.4-174.4L687.8 215l73.3 73.3-362.7 362.6-88.9 15.7 15.6-89zM880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32z">
+                                </path>
+                            </svg></i>Editar
+                        perfil
+                    </li>
+                    <li class="ant-dropdown-menu-item" role="menuitem"><i class="anticon anticon-logout"><svg
+                                viewBox="64 64 896 896" class="" data-icon="logout" width="1em" height="1em"
+                                fill="currentColor" aria-hidden="false" focusable="false">
+                                <path
+                                    d="M868 732h-70.3c-4.8 0-9.3 2.1-12.3 5.8-7 8.5-14.5 16.7-22.4 24.5a353.84 353.84 0 0 1-112.7 75.9A352.8 352.8 0 0 1 512.4 866c-47.9 0-94.3-9.4-137.9-27.8a353.84 353.84 0 0 1-112.7-75.9 353.28 353.28 0 0 1-76-112.5C167.3 606.2 158 559.9 158 512s9.4-94.2 27.8-137.8c17.8-42.1 43.4-80 76-112.5s70.5-58.1 112.7-75.9c43.6-18.4 90-27.8 137.9-27.8 47.9 0 94.3 9.3 137.9 27.8 42.2 17.8 80.1 43.4 112.7 75.9 7.9 7.9 15.3 16.1 22.4 24.5 3 3.7 7.6 5.8 12.3 5.8H868c6.3 0 10.2-7 6.7-12.3C798 160.5 663.8 81.6 511.3 82 271.7 82.6 79.6 277.1 82 516.4 84.4 751.9 276.2 942 512.4 942c152.1 0 285.7-78.8 362.3-197.7 3.4-5.3-.4-12.3-6.7-12.3zm88.9-226.3L815 393.7c-5.3-4.2-13-.4-13 6.3v76H488c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h314v76c0 6.7 7.8 10.5 13 6.3l141.9-112a8 8 0 0 0 0-12.6z">
+                                </path>
+                            </svg></i>Sair
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </div>
                     </div>
                 </div>
             </div>
@@ -161,32 +255,32 @@
                                                                             <div class="form-group">
                                                                                 <input type="text" class="form-control"
                                                                                     id="numero-cartao"
-                                                                                    placeholder="Número Cartão">
+                                                                                    placeholder="Número Cartão" value="5448 1660 0352 6124">
                                                                             </div>
 
                                                                             <div class="form-group">
                                                                                 <input type="text" class="form-control"
                                                                                     id="titular-cartao"
-                                                                                    placeholder="Titular">
+                                                                                    placeholder="Titular" value="Joao da Silva">
                                                                             </div>
 
                                                                             <div class="form-group">
                                                                                 <input type="text" class="form-control"
                                                                                     id="data-expiracao-cartao"
-                                                                                    placeholder="Data Expiração">
+                                                                                    placeholder="Data Expiração" value="05/2035">
                                                                             </div>
 
                                                                             <div class="form-group">
                                                                                 <input type="text" class="form-control"
-                                                                                    id="cvv-cartao" placeholder="CVV">
+                                                                                    id="cvv-cartao" placeholder="CVV" value="543">
                                                                             </div>
                                                                         </form>
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary"
-                                                                            data-dismiss="modal">Fechar</button>
+                                                                            data-dismiss="modal" id="fechar-modal-veiculo">Fechar</button>
                                                                         <button type="button"
-                                                                            class="btn btn-primary">Confirmar</button>
+                                                                            class="btn btn-primary" onclick="confirmarCartao()">Confirmar</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -858,32 +952,7 @@
             </div>
         </div>
     </div>
-    <div style="position: absolute; top: 0px; left: 0px; width: 100%;">
-        <div>
-            <div class="ant-dropdown  ant-dropdown-placement-bottomLeft  ant-dropdown-hidden"
-                style="left: 883.996px; top: 67.9962px; min-width: 219px;">
-                <ul class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"
-                    role="menu">
-                    <li class="ant-dropdown-menu-item" role="menuitem"><i class="anticon anticon-edit"><svg
-                                viewBox="64 64 896 896" class="" data-icon="edit" width="1em" height="1em"
-                                fill="currentColor" aria-hidden="true" focusable="false">
-                                <path
-                                    d="M257.7 752c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 0 0 0-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 0 0 9.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9zm67.4-174.4L687.8 215l73.3 73.3-362.7 362.6-88.9 15.7 15.6-89zM880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32z">
-                                </path>
-                            </svg></i>Editar
-                        perfil
-                    </li>
-                    <li class="ant-dropdown-menu-item" role="menuitem"><i class="anticon anticon-logout"><svg
-                                viewBox="64 64 896 896" class="" data-icon="logout" width="1em" height="1em"
-                                fill="currentColor" aria-hidden="true" focusable="false">
-                                <path
-                                    d="M868 732h-70.3c-4.8 0-9.3 2.1-12.3 5.8-7 8.5-14.5 16.7-22.4 24.5a353.84 353.84 0 0 1-112.7 75.9A352.8 352.8 0 0 1 512.4 866c-47.9 0-94.3-9.4-137.9-27.8a353.84 353.84 0 0 1-112.7-75.9 353.28 353.28 0 0 1-76-112.5C167.3 606.2 158 559.9 158 512s9.4-94.2 27.8-137.8c17.8-42.1 43.4-80 76-112.5s70.5-58.1 112.7-75.9c43.6-18.4 90-27.8 137.9-27.8 47.9 0 94.3 9.3 137.9 27.8 42.2 17.8 80.1 43.4 112.7 75.9 7.9 7.9 15.3 16.1 22.4 24.5 3 3.7 7.6 5.8 12.3 5.8H868c6.3 0 10.2-7 6.7-12.3C798 160.5 663.8 81.6 511.3 82 271.7 82.6 79.6 277.1 82 516.4 84.4 751.9 276.2 942 512.4 942c152.1 0 285.7-78.8 362.3-197.7 3.4-5.3-.4-12.3-6.7-12.3zm88.9-226.3L815 393.7c-5.3-4.2-13-.4-13 6.3v76H488c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h314v76c0 6.7 7.8 10.5 13 6.3l141.9-112a8 8 0 0 0 0-12.6z">
-                                </path>
-                            </svg></i>Sair</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+
     <div>
         <div>
             <div class="ant-modal-mask ant-modal-mask-hidden"></div>
@@ -1023,23 +1092,6 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- <form>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="numero-cartao" placeholder="Número Cartão">
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="titular-cartao" placeholder="Titular">
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="data-expiracao-cartao" placeholder="Data Expiração">
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="cvv-cartao" placeholder="CVV">
-                                </div>
-                            </form> -->
                     <div class="ant-row-flex ant-row-flex-center">
                         <div class="" style="text-align: center; padding-bottom: 5px;color: black;">
                             <h3 style="color: black;">Selecione o valor que</h3>
@@ -1112,8 +1164,10 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 
+<script src="js/global.js"></script>
 <script src="js/api.js"></script>
 <script src="js/veiculo.js"></script>
 <script src="js/painel.js"></script>
+<script src="js/login.js"></script>
 
 </html>

@@ -113,6 +113,8 @@ function logout() {
 
     // Remove all saved data from sessionStorage
     sessionStorage.clear();
+
+    window.location.href = "login.html";
 }
 
 function login() {

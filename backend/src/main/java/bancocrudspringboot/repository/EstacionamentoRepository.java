@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EstacionamentoRepository extends JpaRepository<Estacionamento, Long>{
-    
-    
+        
 }

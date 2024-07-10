@@ -17,6 +17,7 @@ public class Estacionamento {
     private String endereco;
     private String regra;
     private long tempo; // Tempo em minutos
+    private String valorporhora; // Valor por Hora
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
