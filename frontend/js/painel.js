@@ -204,7 +204,7 @@ function getEstacionamento(dadosEstacionamento, veiculo_id) {
                         <form>
                         <div class="form-group">
                             <label>Veiculo ID:</label>
-                            <input type="text" class="form-control" id="veiculo_id" disabled value="` + veiculo_id + `">
+                            <input type="text" class="form-control" id="veiculo_id-`+ veiculo_id +`" disabled value="` + veiculo_id + `">
                         </div>
                             <div class="form-group">
                                 <label for="dados-veiculo">Carro Selecionado</label>
@@ -222,14 +222,14 @@ function getEstacionamento(dadosEstacionamento, veiculo_id) {
 
                             <div class="form-group">
                                 <input type="text" class="form-control"
-                                    id="endereco-estacionamento"
-                                    placeholder="ENDEREÇO">
+                                    id="endereco-estacionamento-`+ veiculo_id +`"
+                                    placeholder="ENDEREÇO" value="RUA 29 DEZEMBRO">
                             </div>
                             <div class="form-group">
                                 <label for="">Selecione a regra:</label>
                                 <br>
                                 <input type="radio" checked
-                                    id="regra-estacionamento"
+                                    id="regra-estacionamento-`+ veiculo_id +`"
                                     class="ant-radio ant-radio-checked">
                                 <span>Zona Azul</span>
                             </div>
@@ -237,13 +237,13 @@ function getEstacionamento(dadosEstacionamento, veiculo_id) {
                                 <label for="">Selecione o tempo:</label>
                                 <br>
                                 <input type="radio" checked
-                                    id="tempo-30-min-estacionamento"
+                                    id="tempo-30-min-estacionamento-`+ veiculo_id +`"
                                     name="tempo-estacionamento"
                                     class="ant-radio ant-radio-checked">
                                 <span>30 minutos: R$ 1,00</span>
                                 <br>
                                 <input type="radio"
-                                    id="tempo-60-min-estacionamento"
+                                    id="tempo-60-min-estacionamento-`+ veiculo_id +`"
                                     name="tempo-estacionamento"
                                     class="ant-radio ant-radio-checked">
                                 <span>1 hora: R$ 2,00</span>
@@ -251,10 +251,10 @@ function getEstacionamento(dadosEstacionamento, veiculo_id) {
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" id="fechar-modal-estacionamento"
+                        <button type="button" class="btn btn-secondary" id="fechar-modal-estacionamento-`+ veiculo_id +`"
                             data-dismiss="modal">Fechar</button>
                         <button type="button"
-                            class="btn btn-primary" onclick="confirmarEstacionamento()">Confirmar</button>
+                            class="btn btn-primary" onclick="confirmarEstacionamento(`+ veiculo_id +`)">Confirmar</button>
                     </div>
                 </div>
             </div>
@@ -342,13 +342,12 @@ function confirmarCartao(){
     );
 }
 
-function confirmarEstacionamento(){
-    const veiculo_id = parseInt(document.querySelector("#veiculo_id").value);
-    const endereco = document.querySelector("#endereco-estacionamento").value;
-    const regra = document.querySelector("#regra-estacionamento").value;
+function confirmarEstacionamento(veiculo_id){
+    const endereco = document.querySelector("#endereco-estacionamento-" + veiculo_id).value;
+    const regra = document.querySelector("#regra-estacionamento-" + veiculo_id).value;
 
-    const tempo_30_min = document.querySelector("#tempo-30-min-estacionamento");
-    const tempo_60_min = document.querySelector("#tempo-60-min-estacionamento");
+    const tempo_30_min = document.querySelector("#tempo-30-min-estacionamento-" + veiculo_id);
+    const tempo_60_min = document.querySelector("#tempo-60-min-estacionamento-" + veiculo_id);
 
     let tempo = 0;
     if(tempo_30_min.checked){
@@ -373,7 +372,11 @@ function confirmarEstacionamento(){
         rota,
         function (data) {
             console.log("Estacionamento gravado!" + JSON.stringify(data));
-            fecharModalEstacionamento();
+
+            const veiculo_id = data.veiculo_id;
+            console.log("veiculo_id:" + veiculo_id);
+            
+            fecharModalEstacionamento(veiculo_id);
             listarEstacionamentos();        
         },
         body
@@ -390,7 +393,7 @@ function fecharModalCartao() {
     fechar.click();
 }
 
-function fecharModalEstacionamento() {
-    const fechar = document.querySelector("#fechar-modal-estacionamento");
+function fecharModalEstacionamento(veiculo_id) {
+    const fechar = document.querySelector("#fechar-modal-estacionamento-" + veiculo_id);
     fechar.click();
 }
