@@ -43,8 +43,6 @@ function cardVeiculo(){
     });
 }
 
-
-
 function loadDadosEstacionamento(aListaDados) {
     document.querySelector("#lista-atividades").innerHTML = "";
     aListaDados.forEach(function (data, key) {
@@ -65,7 +63,6 @@ function loadDadosEstacionamento(aListaDados) {
         });
     });
 }
-
 
 function loadDadosEstacionamentoAtual(data, placa) {
 
@@ -167,7 +164,7 @@ function loadDadosVeiculo(aListaVeiculos) {
                             </div>
                         </div>
                     </div>
-                    ` + getEstacionamento(data) + `
+                    ` + getEstacionamento(data, veiculo_id) + `
                     <div class="ant-col-4">
                         <div class="">
                             <button type="button"
@@ -180,7 +177,7 @@ function loadDadosVeiculo(aListaVeiculos) {
     });
 }
 
-function getEstacionamento(dadosEstacionamento, placa) {
+function getEstacionamento(dadosEstacionamento, veiculo_id) {
     return `<div class="ant-col-6" style="padding-block-start: 10px; margin-left: -5%;">
         
     <!-- MODAL NOVO ESTACIONAMENTO-->
@@ -205,10 +202,15 @@ function getEstacionamento(dadosEstacionamento, placa) {
                     </div>
                     <div class="modal-body">
                         <form>
+
+                        <div class="form-group">
+                            <label>Veiculo ID:</label>
+                            <input type="text" class="form-control" id="veiculo_id" disabled value="` + veiculo_id + `">
+                        </div>
                             <div class="form-group">
                                 <label for="dados-veiculo">Carro Selecionado</label>
                                 <br>
-                                <select class="form-control" id="dados-veiculo">
+                                <select class="form-control" id="dados-veiculo" disabled>
                                     <option value="2" selected>` + dadosEstacionamento.placa + ` - ` + dadosEstacionamento.modelo + `
                                     </option>
                                 </select>
@@ -216,7 +218,7 @@ function getEstacionamento(dadosEstacionamento, placa) {
                             <div class="form-group">
                                 <input type="text" class="form-control"
                                     id="placa-estacionamento"
-                                    placeholder="PLACA">
+                                    placeholder="PLACA" disabled value="` + dadosEstacionamento.placa +`">
                             </div>
 
                             <div class="form-group">
@@ -250,7 +252,7 @@ function getEstacionamento(dadosEstacionamento, placa) {
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
+                        <button type="button" class="btn btn-secondary" id="fechar-modal-estacionamento"
                             data-dismiss="modal">Fechar</button>
                         <button type="button"
                             class="btn btn-primary" onclick="confirmarEstacionamento()">Confirmar</button>
@@ -338,6 +340,44 @@ function confirmarCartao(){
     );
 }
 
+function confirmarEstacionamento(){
+    const veiculo_id = parseInt(document.querySelector("#veiculo_id").value);
+    const endereco = document.querySelector("#endereco-estacionamento").value;
+    const regra = document.querySelector("#regra-estacionamento").value;
+
+    const tempo_30_min = document.querySelector("#tempo-30-min-estacionamento");
+    const tempo_60_min = document.querySelector("#tempo-60-min-estacionamento");
+
+    let tempo = 0;
+    if(tempo_30_min.checked){
+        tempo = 30;
+    } else if(tempo_60_min.checked){
+        tempo = 60;
+    }
+
+    let body = { 
+        veiculo_id,     
+        endereco,
+        regra,
+        tempo
+    };
+
+    console.log(body);
+
+    const method = "POST";
+    const rota = "estacionamento";
+    callApiPost(
+        method,
+        rota,
+        function (data) {
+            console.log("Estacionamento gravado!" + JSON.stringify(data));
+            fecharModalEstacionamento();
+            listarEstacionamentos();        
+        },
+        body
+    );
+}
+
 function fecharModal() {
     const fechar = document.querySelector("#fechar-modal-veiculo");
     fechar.click();
@@ -345,5 +385,10 @@ function fecharModal() {
 
 function fecharModalCartao() {
     const fechar = document.querySelector("#fechar-modal-veiculo");
+    fechar.click();
+}
+
+function fecharModalEstacionamento() {
+    const fechar = document.querySelector("#fechar-modal-estacionamento");
     fechar.click();
 }
