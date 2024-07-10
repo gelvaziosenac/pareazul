@@ -1,6 +1,6 @@
 function atualizaPainel(){
-    listarVeiculos();
     listarCartoes();
+    listarVeiculos();
     listarEstacionamentos();
 }
 
@@ -113,6 +113,7 @@ function loadDadosEstacionamentoAtual(data, placa) {
 
 function loadDadosCartao(aListaDados) {
     document.querySelector("#lista-cartao").innerHTML = "";
+    
     aListaDados.forEach(function (data, key) {
         const cartao_id = data.id;
         const numero = data.numero;
@@ -182,19 +183,18 @@ function getEstacionamento(dadosEstacionamento, veiculo_id) {
         
     <!-- MODAL NOVO ESTACIONAMENTO-->
         <button type="button" class="btn-estacionar" data-toggle="modal"
-            data-target="#novo-estacionamento">
+            data-target="#novo-estacionamento-`+ veiculo_id +`">
             Estacionar
         </button>
 
         <!-- Modal -->
-        <div class="modal fade" id="novo-estacionamento" tabindex="-1"
+        <div class="modal fade" id="novo-estacionamento-`+ veiculo_id +`" tabindex="-1"
             role="dialog" aria-labelledby="exampleModalCenterTitle"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="novo-estacionamento">
-                            Estacionar</h5>
+                        <h5 class="modal-title">Estacionar</h5>
                         <button type="button" class="close" data-dismiss="modal"
                             aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -202,7 +202,6 @@ function getEstacionamento(dadosEstacionamento, veiculo_id) {
                     </div>
                     <div class="modal-body">
                         <form>
-
                         <div class="form-group">
                             <label>Veiculo ID:</label>
                             <input type="text" class="form-control" id="veiculo_id" disabled value="` + veiculo_id + `">
@@ -304,7 +303,7 @@ function confirmarVeiculo(){
         rota,
         function (data) {
             console.log("Veiculo gravado!" + JSON.stringify(data));
-            fecharModal();
+            fecharModalVeiculo();
             listarVeiculos();
         },
         body
@@ -317,14 +316,17 @@ function confirmarCartao(){
     const dataexpiracao = document.querySelector("#data-expiracao-cartao").value;    
     const cvv     = document.querySelector("#cvv-cartao").value;
 
+    numero = numero.trim();
+
     let body = { 
+        // removido espaço da string com trim()
         numero:numero.trim(),       
-        nome,
-        dataexpiracao,
-        cvv
+        nome:nome,
+        dataexpiracao:dataexpiracao,
+        cvv:cvv
     };
 
-    console.log(body)
+    console.log(body);
 
     const method = "POST";
     const rota = "cartao";
@@ -378,13 +380,13 @@ function confirmarEstacionamento(){
     );
 }
 
-function fecharModal() {
+function fecharModalVeiculo() {
     const fechar = document.querySelector("#fechar-modal-veiculo");
     fechar.click();
 }
 
 function fecharModalCartao() {
-    const fechar = document.querySelector("#fechar-modal-veiculo");
+    const fechar = document.querySelector("#fechar-modal-cartao");
     fechar.click();
 }
 
