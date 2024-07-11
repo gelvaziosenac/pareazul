@@ -6,7 +6,19 @@ function atualizaPainel(){
 }
 
 function atualizaDadosPerfil(){
-    // nome-usuario
+    const telefone_usuario_logado = sessionStorage.getItem("telefone_usuario_logado");
+    document.querySelector("#telefone-usuario").value = telefone_usuario_logado;
+    
+    const method = "GET";
+    const rota = "perfiltelefone/" + telefone_usuario_logado;
+    callApi(method, rota, function (data) {
+        console.log(data);    
+        
+        // SETA O USUARIO LOGADO
+        const nome_usuario_logado = data.nome;
+        sessionStorage.setItem("usuario_logado", nome_usuario_logado);
+        document.querySelector("#nome-usuario").innerHTML = nome_usuario_logado;
+    });
 }
 
 function listarVeiculos(){

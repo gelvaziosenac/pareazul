@@ -135,13 +135,12 @@ function login() {
             return false;
         }
 
-        const nome = data.nome;
         // SETA O TOKEN
         sessionStorage.setItem("token_logado", "54a80097f23822cb26b6d5a980968601");
-
-        // SETA O USUARIO LOGADO
-        sessionStorage.setItem("usuario_logado", nome);
-
+                
+        const telefone_usuario = data.telefone;
+        sessionStorage.setItem("telefone_usuario_logado", telefone_usuario);
+                
         // REDIRECIONA PARA A HOME
         window.location.href = "index.html";
 

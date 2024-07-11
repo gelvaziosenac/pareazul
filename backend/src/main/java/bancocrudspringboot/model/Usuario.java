@@ -13,11 +13,9 @@ import javax.persistence.*;
 public class Usuario {
 
     private long id;
-    
-    private String telefone;
-    private String senha;
-
     private String cidade;
+    private String senha;    
+    private String telefone;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

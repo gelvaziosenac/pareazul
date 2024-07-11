@@ -35,7 +35,7 @@ public class PerfilController {
 	}
 
 	// Listar um perfil pelo telefone
-	@GetMapping("/perfil/{telefone}")
+	@GetMapping("/perfiltelefone/{telefone}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Perfil> getCadastroByTelefone(@PathVariable(value = "telefone") String telefone)
 	throws ResourceNotFoundException {
