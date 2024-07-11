@@ -1,7 +1,12 @@
 function atualizaPainel(){
+    atualizaDadosPerfil();
     listarCartoes();
     listarVeiculos();
     listarEstacionamentos();
+}
+
+function atualizaDadosPerfil(){
+    // nome-usuario
 }
 
 function listarVeiculos(){
@@ -47,7 +52,7 @@ function loadDadosEstacionamento(aListaDados) {
     document.querySelector("#lista-atividades").innerHTML = "";
     aListaDados.forEach(function (data, key) {
         console.log(data);
-        const veiculo_id = data.veiculo_id;
+        const veiculo_id = data.veiculo;
         const method = "GET";
         const rota = "veiculo/" + veiculo_id;
         let placa = "";
@@ -264,11 +269,24 @@ function getEstacionamento(dadosEstacionamento, veiculo_id) {
 }
 
 function excluirVeiculo(codigo) {
-    const method = "DELETE";
-    const rota = "veiculo/" + codigo;
+
+    // Verifica se existe estacionamento para este veiculo
+    const method = "GET";
+    const rota = "estacionamentoveiculo/" + codigo;
     callApi(method, rota, function(data){
-        listarVeiculos();
-    });    
+        console.log(data);
+
+        if(data.length > 0){
+            alert("Este veiculo tem vinculo de estacionamento e nao pode ser excluido!");
+        } else {
+            const method = "DELETE";
+            const rota = "veiculo/" + codigo;
+            callApi(method, rota, function(data){
+                alert("Veiculo excluido com sucesso!");
+                listarVeiculos();
+            }); 
+        }  
+    });
 }
 
 function excluirCartao(codigo) {
@@ -358,7 +376,7 @@ function confirmarEstacionamento(veiculo_id){
     }
 
     let body = { 
-        veiculo_id,     
+        veiculo:veiculo_id,     
         endereco,
         regra,
         tempo
@@ -374,7 +392,7 @@ function confirmarEstacionamento(veiculo_id){
         function (data) {
             console.log("Estacionamento gravado!" + JSON.stringify(data));
 
-            const veiculo_id = data.veiculo_id;
+            const veiculo_id = data.veiculo;
             console.log("veiculo_id:" + veiculo_id);
 
             fecharModalEstacionamento(veiculo_id);

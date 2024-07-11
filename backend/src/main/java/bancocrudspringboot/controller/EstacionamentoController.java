@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
+import bancocrudspringboot.exception.ResourceNotFoundException;
+import bancocrudspringboot.model.Cartao;
 import bancocrudspringboot.model.Estacionamento;
 import bancocrudspringboot.repository.EstacionamentoRepository;
 
@@ -29,7 +31,14 @@ public class EstacionamentoController {
 	public List<Estacionamento> getAllCadastrosOrdenado() {
 		return this.estacionamentoRepository.findAllOrderByIdDesc();
 	}
-		
+			
+	// Listar todos os estacionamento do veiculo
+	@GetMapping("/estacionamentoveiculo/{veiculo}")
+	@ResponseStatus(HttpStatus.OK)
+	public List<Estacionamento> getCadastroByVeiculo(@PathVariable(value = "veiculo") Long veiculo){
+		return estacionamentoRepository.findEstacionamentoByVeiculo(veiculo);
+	}
+
 	// Inserir
 	@PostMapping("/estacionamento")
 	@ResponseStatus(HttpStatus.CREATED)

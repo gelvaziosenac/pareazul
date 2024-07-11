@@ -13,7 +13,7 @@ public class Estacionamento {
     
     private long id;
 
-    private long veiculo_id;    
+    private long veiculo;    
     private String endereco;
     private String regra;
     private long tempo; // Tempo em minutos

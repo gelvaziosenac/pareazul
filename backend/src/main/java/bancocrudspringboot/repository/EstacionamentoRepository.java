@@ -11,5 +11,7 @@ import org.springframework.stereotype.Repository;
 public interface EstacionamentoRepository extends JpaRepository<Estacionamento, Long>{
 
     @Query(value = "select * from estacionamento order by id desc", nativeQuery = true)
-    List<Estacionamento> findAllOrderByIdDesc();    
+    List<Estacionamento> findAllOrderByIdDesc();
+
+    List<Estacionamento> findEstacionamentoByVeiculo(Long veiculo);    
 }
