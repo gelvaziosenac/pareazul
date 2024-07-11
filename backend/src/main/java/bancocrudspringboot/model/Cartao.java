@@ -17,6 +17,7 @@ public class Cartao {
     private String nome;
     private String dataexpiracao;
     private int cvv;
+    private long usuario;
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

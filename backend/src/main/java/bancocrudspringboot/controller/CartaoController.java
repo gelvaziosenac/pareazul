@@ -27,6 +27,14 @@ public class CartaoController {
 		return this.cartaoRepository.findAll();
 	}
     
+	// Listar um cartao pelo usuario
+	@GetMapping("/cartaousuario/{usuario}")
+	@ResponseStatus(HttpStatus.OK)
+	public List<Cartao> getCadastroByUsuario(@PathVariable(value = "usuario") Long usuario)
+	throws ResourceNotFoundException {
+		return cartaoRepository.findCartaoByUsuario(usuario);
+	}
+
 	// Listar um cartao pelo id
 	@GetMapping("/cartao/{id}")
 	@ResponseStatus(HttpStatus.OK)

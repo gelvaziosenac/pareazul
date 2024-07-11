@@ -311,7 +311,7 @@ function confirmarVeiculo(){
 }
 
 function confirmarCartao(){
-    const numero      = document.querySelector("#numero-cartao").value;
+    let numero      = document.querySelector("#numero-cartao").value;
     const nome        = document.querySelector("#titular-cartao").value;    
     const dataexpiracao = document.querySelector("#data-expiracao-cartao").value;    
     const cvv     = document.querySelector("#cvv-cartao").value;
@@ -323,7 +323,8 @@ function confirmarCartao(){
         numero:numero.trim(),       
         nome:nome,
         dataexpiracao:dataexpiracao,
-        cvv:cvv
+        cvv:cvv,
+        usuario:1
     };
 
     console.log(body);
