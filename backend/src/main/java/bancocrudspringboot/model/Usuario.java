@@ -1,20 +1,24 @@
 package bancocrudspringboot.model;
 
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.persistence.*;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "UsuarioSistema", uniqueConstraints={@UniqueConstraint(columnNames={"telefone"})})
+@Table(name = "Usuario")
 public class Usuario {
 
     private long id;
-    private String cidade;
-    private String senha;    
+    private String senha;
+    private String nome;
+    private String cpf;
+    private String email;
     private String telefone;
 
     @Id

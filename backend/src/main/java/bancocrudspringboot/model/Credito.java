@@ -1,10 +1,13 @@
 package bancocrudspringboot.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.persistence.*;
 
 @Getter
 @Setter
@@ -13,9 +16,8 @@ import javax.persistence.*;
 public class Credito {
 
     private long id;
-    private long usuario_id; // Codigo do usuario que vai receber o credito
-    
     private String valor;
+    private long usuario;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
