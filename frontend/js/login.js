@@ -8,7 +8,7 @@ function onloadLogin() {
 }
 
 function validaSessao(pagina) {
-    const token_logado = sessionStorage.getItem("token_logado");
+    const token_logado = localStorage.getItem("token_logado");
     if (token_logado == "54a80097f23822cb26b6d5a980968601") {
         // redireciona para a pagina home pois usuario ja esta logado
         atualizaMenu();
@@ -106,27 +106,27 @@ function atualizaMenu() {
 }
 
 function logout() {
-    sessionStorage.setItem("token_logado", "");
+    localStorage.setItem("token_logado", "");
+    localStorage.setItem("usuario_logado", "");
 
     // Remove o token da sessao
-    sessionStorage.removeItem("token_logado");
+    localStorage.removeItem("token_logado");
 
     // Remove all saved data from sessionStorage
-    sessionStorage.clear();
+    localStorage.clear();
 
     window.location.href = "login.html";
 }
 
 function login() {
-    const telefone = document.querySelector("#telefone").value;
+    const email = document.querySelector("#email").value;
     const senha = document.querySelector("#senha").value;
 
     const body = {
-        telefone : telefone,
+        email : email,
         senha : senha
     };
-
-    // function callApi(method, rota, fn = false) {
+    
     callApiPost("POST", "login", function(data) {
 
         // VALIDAR LOGIN 
@@ -138,8 +138,8 @@ function login() {
         // SETA O TOKEN
         sessionStorage.setItem("token_logado", "54a80097f23822cb26b6d5a980968601");
                 
-        const telefone_usuario = data.telefone;
-        sessionStorage.setItem("telefone_usuario_logado", telefone_usuario);
+        const usuario_logado = data.id;
+        localStorage.setItem("usuario_logado", usuario_logado);
                 
         // REDIRECIONA PARA A HOME
         window.location.href = "index.html";
