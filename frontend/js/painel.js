@@ -17,8 +17,16 @@ function atualizaDadosPerfil(){
             
             // SETA O USUARIO LOGADO
             const nome_usuario_logado = data.nome;
-            sessionStorage.setItem("usuario_logado", nome_usuario_logado);
+            const cpf_usuario_logado = data.cpf;
+            const email_usuario_logado = data.email;
+            
             document.querySelector("#nome-usuario").innerHTML = nome_usuario_logado;
+            
+            // Atualiza os dados do modal de Perfil de Usuario
+            
+            document.querySelector("#nome-usuario").value = nome_usuario_logado;
+            document.querySelector("#cpf-usuario").value = cpf_usuario_logado;
+            document.querySelector("#email-usuario").value = email_usuario_logado;                                
         });
     } else {
         window.location.href = "login.html";

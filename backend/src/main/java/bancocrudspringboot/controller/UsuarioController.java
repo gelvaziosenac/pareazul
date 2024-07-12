@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import bancocrudspringboot.exception.ResourceNotFoundException;
 import bancocrudspringboot.model.Login;
 import bancocrudspringboot.model.Usuario;
-import bancocrudspringboot.model.Veiculo;
 import bancocrudspringboot.repository.UsuarioRepository;
 
 @CrossOrigin

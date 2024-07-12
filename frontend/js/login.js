@@ -136,7 +136,7 @@ function login() {
         }
 
         // SETA O TOKEN
-        sessionStorage.setItem("token_logado", "54a80097f23822cb26b6d5a980968601");
+        localStorage.setItem("token_logado", "54a80097f23822cb26b6d5a980968601");
                 
         const usuario_logado = data.id;
         localStorage.setItem("usuario_logado", usuario_logado);
