@@ -200,4 +200,48 @@ function resetsenha() {
 
 function confirmarUsuario(){
     alert("DESENVOLVER A INSERCAO DE USUARIO!");
+
+    return true;
+    
+    const nome = document.querySelector("#nome-usuario").value;
+        
+    // {
+    //     "senha": "123456",
+    //     "nome": "JOAO DA SILVA",
+    //     "cpf": "01115818",
+    //     "email": "EMAIL@EMAIL.COMs",
+    //     "telefone": "4798863115"		
+    // }
+
+    let body = { 
+        // removido espaço da string com trim()
+        // numero:numero.trim(),       
+        // nome:nome,
+        // dataexpiracao:dataexpiracao,
+        // cvv:cvv,
+        // usuario:1
+    };
+
+    console.log(body);
+
+    const method = "POST";
+    const rota = "usuario";
+    callApiPost(
+        method,
+        rota,
+        function (data) {
+            console.log("Usuario gravado!" + JSON.stringify(data));
+            fecharModalUsuario();                  
+        },
+        body
+    );
 }
+
+function fecharModalUsuario(){
+    // fecharModalUsuario
+    const fechar = document.querySelector("#fecharModalUsuario");
+    fechar.click();
+}
+
+
+
