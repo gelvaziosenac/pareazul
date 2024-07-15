@@ -1,23 +1,17 @@
-# Backend - Projeto "apiareazul"
-* Alteração 00
-    * Adicionar as classes abaixo na apiareaazul
-        ```
-        apiareaazul/main/model/Perfil.java
-        apiareaazul/main/model/Estacionamento.java
-        ```
-* Alteração 01
-     * Alterar o banco de dados para o banco do seu grupo em:
-          * apiareaazul\src\main\resources\application.properties
+# Projeto "apiareazul"
+## PROJETO INTEGRADOR
+ALTERACAO 01
+* Criar Nova Conta - Usuario
+  * BACKEND - TESTAR NO INSOMNIA
+  * FRONTEND - FAZER E SE TIVER DUVIDAS - CHAMAR PROFESSOR
 
-* Alteração 02
-    * Criar a api para as rotas abaixo:
-        * Usuario
-            * Login - ok
-            * inserir - falta
-        * Cartao
-        * Veiculo
-        * Crédito
-        * Perfil
-        * Estacionamento
-        
-        
+ALTERACAO 02
+* Comprar Creditos - Deve atualizar o Saldo
+  * BACKEND - TESTAR NO INSOMNIA
+  * FRONTEND - FAZER E SE TIVER DUVIDAS - CHAMAR PROFESSOR
+
+ALTERACAO 03
+* Ao confirmar Perfil, deve atualizar o perfil
+  * BACKEND - TESTAR NO INSOMNIA
+  * FRONTEND - FAZER E SE TIVER DUVIDAS - CHAMAR PROFESSOR
+      
