@@ -2,6 +2,7 @@
 ## PROJETO INTEGRADOR
 ALTERACAO 01
 * Criar Nova Conta - Usuario
+  * Deve validar as 2 senhar no confirmar Senha. 
   * BACKEND - TESTAR NO INSOMNIA
   * FRONTEND - FAZER E SE TIVER DUVIDAS - CHAMAR PROFESSOR
 

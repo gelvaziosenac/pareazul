@@ -17,10 +17,11 @@ import lombok.Setter;
 public class Usuario {
 
     private long id;
+    private String email;
     private String senha;
+    
     private String nome;
     private String cpf;
-    private String email;
     private String telefone;
 
     @Id
