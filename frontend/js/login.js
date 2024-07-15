@@ -197,3 +197,7 @@ function resetsenha() {
         window.location.href = "index.html";
     });
 }
+
+function confirmarUsuario(){
+    alert("DESENVOLVER A INSERCAO DE USUARIO!");
+}
