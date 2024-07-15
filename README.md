@@ -14,4 +14,11 @@ ALTERACAO 03
 * Ao confirmar Perfil, deve atualizar o perfil
   * BACKEND - TESTAR NO INSOMNIA
   * FRONTEND - FAZER E SE TIVER DUVIDAS - CHAMAR PROFESSOR
-      
+
+ALTERACAO 04
+* Apos Estacionar um veiculo, deve debitar do Saldo Atual
+  * BACKEND - Criar uma funcao para atualizar o Saldo
+     * Criar uma funcao para retornar o valor de Saldo no JAVA 
+  * FRONTEND - Mostrar o Saldo Atualizado
+    * Ao iniciar a tela - deve mostrar sempre o saldo atualizado do banco de dados
+    * 
