@@ -203,8 +203,10 @@ function confirmarUsuario(){
 
     return true;
     
-    const nome = document.querySelector("#nome-usuario").value;
+    const nome = document.querySelector("#senha-nova-usuario").value;
+    const nome2 = document.querySelector("#senha-nova-usuario2").value;
         
+    if(senha == senha2)
     // {
     //     "senha": "123456",
     //     "nome": "JOAO DA SILVA",

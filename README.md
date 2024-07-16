@@ -25,7 +25,8 @@ ALTERACAO 04
 
 ALTERACAO 05
 * Criar a rota para alterar a senha do usuario:
-  * Deve validar a senha atual ao confirmar a alteracao da Senha;  
+  * Deve validar a senha atual ao confirmar a alteracao da Senha; 
+  * As duas senhas informadas para a nova senha devem coincidir;
 
 ALTERACAO 06
 * Nas rotas abaixo, deve listar apenas os dados do usuario logado:
