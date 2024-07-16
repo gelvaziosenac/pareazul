@@ -15,7 +15,7 @@ function atualizaDadosPerfil(){
         callApi(method, rota, function (data) {
 
             console.log("DADOS DO PERFIL - INICIO");
-            
+
             console.log(data);    
             
             // SETA O USUARIO LOGADO
@@ -27,6 +27,7 @@ function atualizaDadosPerfil(){
             
             // Atualiza os dados do modal de Perfil de Usuario
             
+            document.querySelector("#nome-usuario-logado").innerHTML = nome_usuario_logado;
             document.querySelector("#nome-usuario").value = nome_usuario_logado;
             document.querySelector("#cpf-usuario").value = cpf_usuario_logado;
             document.querySelector("#email-usuario").value = email_usuario_logado;                                

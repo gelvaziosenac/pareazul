@@ -22,4 +22,8 @@ ALTERACAO 04
      * Criar uma funcao para retornar o valor de Saldo no JAVA 
   * FRONTEND - Mostrar o Saldo Atualizado
     * Ao iniciar a tela - deve mostrar sempre o saldo atualizado do banco de dados
-    * 
+
+ALTERACAO 05
+    * Criar a rota para alterar a senha do usuario:
+      * Deve validar a senha atual ao confirmar a alteracao da Senha;  
+      
