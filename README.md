@@ -24,6 +24,11 @@ ALTERACAO 04
     * Ao iniciar a tela - deve mostrar sempre o saldo atualizado do banco de dados
 
 ALTERACAO 05
-    * Criar a rota para alterar a senha do usuario:
-      * Deve validar a senha atual ao confirmar a alteracao da Senha;  
-      
+* Criar a rota para alterar a senha do usuario:
+  * Deve validar a senha atual ao confirmar a alteracao da Senha;  
+
+ALTERACAO 06
+* Nas rotas abaixo, deve listar apenas os dados do usuario logado:
+   * Lista de Cartoes
+   * Lista de Veiculos
+   * Lista de Estacionamentos
