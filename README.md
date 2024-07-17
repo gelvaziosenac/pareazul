@@ -11,7 +11,7 @@ ALTERACAO 02 - Grupo Bruna e Romulo
   * BACKEND - TESTAR NO INSOMNIA
   * FRONTEND - FAZER E SE TIVER DUVIDAS - CHAMAR PROFESSOR
 
-ALTERACAO 03 - Grupo Mikael - 
+ALTERACAO 03 - Grupo Mikael -  
 * Ao confirmar Perfil, deve atualizar o perfil
   * BACKEND - TESTAR NO INSOMNIA
   * FRONTEND - FAZER E SE TIVER DUVIDAS - CHAMAR PROFESSOR
@@ -23,7 +23,7 @@ ALTERACAO 04 - Grupo Vinicius
   * FRONTEND - Mostrar o Saldo Atualizado
     * Ao iniciar a tela - deve mostrar sempre o saldo atualizado do banco de dados
 
-ALTERACAO 05 - Feito em sala de aula
+ALTERACAO 05 - Grupo Todos - Feito em sala de aula
 * Criar a rota para alterar a senha do usuario:
   * Deve validar a senha atual ao confirmar a alteracao da Senha; 
   * As duas senhas informadas para a nova senha devem coincidir;
@@ -51,3 +51,4 @@ ALTERACAO 07 - Análise de Requisitos
 
 ALTERACAO 08 - Teste de Software
 * Criar os testes de acordo com a Analise de Requisitos
+* Criar apresentação de Projeto Integrador do Sistema.
