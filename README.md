@@ -33,3 +33,4 @@ ALTERACAO 06
    * Lista de Cartoes
    * Lista de Veiculos
    * Lista de Estacionamentos
+   * Credito Atual - apenas do usuario Atual

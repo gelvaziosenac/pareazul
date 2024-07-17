@@ -333,8 +333,8 @@ function confirmarVeiculo(){
     const modelo     = document.querySelector("#modelo-veiculo").value;
 
     let body = { 
-        tipo      ,       
-        placa     ,
+        tipo,       
+        placa:placa.toUpperCase(),
         ano       ,
         fabricante,
         modelo    ,

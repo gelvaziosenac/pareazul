@@ -206,7 +206,7 @@ function confirmarUsuario(){
     const nome = document.querySelector("#senha-nova-usuario").value;
     const nome2 = document.querySelector("#senha-nova-usuario2").value;
         
-    if(senha == senha2)
+    // if(senha == senha2)
     // {
     //     "senha": "123456",
     //     "nome": "JOAO DA SILVA",
@@ -240,10 +240,41 @@ function confirmarUsuario(){
 }
 
 function fecharModalUsuario(){
-    // fecharModalUsuario
     const fechar = document.querySelector("#fecharModalUsuario");
     fechar.click();
 }
 
+function confirmarAlteracaoSenha(){
+    const email = document.querySelector("#email-usuario").value;
+    const senha = document.querySelector("#senha-atual-usuario").value;
 
+    const body = {
+        email : email,
+        senha : senha
+    };
+    
+    callApiPost("POST", "login", function(data) {
+
+        // VALIDAR LOGIN 
+        if(data.mensagem != "" && data.mensagem != undefined){
+            alert(data.mensagem);
+            return false;
+        }
+
+        // APOS VALIDAR O LOGIN
+        // ALTERA A SENHA
+        alterarSenhaUsuario();
+    }, body);
+}
+
+function alterarSenhaUsuario(){
+    const senha = document.querySelector("#senha-atual-usuario").value;
+    const body = {
+        senha : senha
+    };
+
+    const id_usuario_logado = document.querySelector("#usuario_logado").value;
+    callApiPost("PUT", "senhausuario/" + id_usuario_logado, function(data) {        
+    }, body);
+}
 
