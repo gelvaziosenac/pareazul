@@ -264,7 +264,7 @@ function confirmarAlteracaoSenha(){
 }
 
 function alterarSenhaUsuario(){
-    const senha = document.querySelector("#senha-atual-usuario").value;
+    const senha = document.querySelector("#senha-usuario").value;
     const body = {
         senha : senha
     };
