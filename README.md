@@ -34,3 +34,24 @@ ALTERACAO 06
    * Lista de Veiculos
    * Lista de Estacionamentos
    * Credito Atual - apenas do usuario Atual
+
+ALTERACAO 07 - Análise de Requisitos
+* Criar os requisitos funcionais para as telas/paginas abaixo
+  * Pagina de Login
+    * Logar no sistema 
+    * Criar um novo usuario no sistema
+  * Cartoes de Credito
+    * Sistema deve permitir gravar um novo cartao de credito
+    * Sistema deve permitir excluir cartao de credito
+  * Veículos
+    * Sistema deve permitir gravar um novo veiculo
+    * Sistema deve permitir excluir um veiculo
+  * Atividades
+    * Sistema deve inserir as atividades de estacionamento na aba Atividades
+
+ALTERACAO 08 - Teste de Software
+* Criar os testes de acordo com a Analise de Requisitos 
+
+
+
+

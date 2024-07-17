@@ -72,9 +72,9 @@ public class UsuarioController {
 	@PutMapping("/senhausuario/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Usuario> updateSenhaUsuario(@PathVariable(value = "id") Long cadastroId,
-															  @Validated 
-															  @RequestBody 
-                Usuario cadastroCaracteristicas) throws ResourceNotFoundException {
+													  @RequestBody 
+                								      Usuario cadastroCaracteristicas) 
+													  throws ResourceNotFoundException {
                 Usuario cadastro = usuarioRepository.findById(cadastroId)
 				.orElseThrow(() -> new ResourceNotFoundException
 						("Cadastro não encontrado para o ID : " + cadastroId));

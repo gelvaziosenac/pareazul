@@ -199,41 +199,37 @@ function resetsenha() {
 }
 
 function confirmarUsuario(){
-    alert("DESENVOLVER A INSERCAO DE USUARIO!");
-
-    return true;
+    const nome     = document.querySelector("#nome-usuario").value;
+    const cpf      = document.querySelector("#nome-usuario").value;
+    const telefone = document.querySelector("#nome-usuario").value;
+    const email    = document.querySelector("#nome-usuario").value;
+    const senha    = document.querySelector("#nome-usuario").value;
+    const senha2   = document.querySelector("#nome-usuario").value;
     
-    const nome = document.querySelector("#senha-nova-usuario").value;
-    const nome2 = document.querySelector("#senha-nova-usuario2").value;
-        
-    // if(senha == senha2)
-    // {
-    //     "senha": "123456",
-    //     "nome": "JOAO DA SILVA",
-    //     "cpf": "01115818",
-    //     "email": "EMAIL@EMAIL.COMs",
-    //     "telefone": "4798863115"		
-    // }
+    if(senha != senha2){
+        alert("Senhas não conferem!");
+        return false;
+    }
 
-    let body = { 
-        // removido espaço da string com trim()
-        // numero:numero.trim(),       
-        // nome:nome,
-        // dataexpiracao:dataexpiracao,
-        // cvv:cvv,
-        // usuario:1
-    };
+    let body = {
+        senha,
+        nome,
+        cpf,
+        email,
+        telefone
+    }
 
     console.log(body);
 
     const method = "POST";
     const rota = "usuario";
+
     callApiPost(
         method,
         rota,
         function (data) {
             console.log("Usuario gravado!" + JSON.stringify(data));
-            fecharModalUsuario();                  
+            fecharModalUsuario();
         },
         body
     );
@@ -274,6 +270,7 @@ function alterarSenhaUsuario(){
     };
 
     const id_usuario_logado = document.querySelector("#usuario_logado").value;
+    
     callApiPost("PUT", "senhausuario/" + id_usuario_logado, function(data) {        
     }, body);
 }
