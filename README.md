@@ -52,3 +52,11 @@ ALTERACAO 07 - Análise de Requisitos
 ALTERACAO 08 - Teste de Software
 * Criar os testes de acordo com a Analise de Requisitos
 * Criar apresentação de Projeto Integrador do Sistema.
+
+ALTERACAO 09
+* Criar uma lista de arquivo com nome da funcao que foi alterada para posterior integracao dos
+* sistemas-FRONTEND E BACKEND.
+* REPOSITORUeSTACIONAMENTO FUNCAO XXX()
+* REPOSITORUeSTACIONAMENTO FUNCAO XXX()
+* REPOSITORUeSTACIONAMENTO FUNCAO XXX()
+* REPOSITORUeSTACIONAMENTO FUNCAO XXX()
