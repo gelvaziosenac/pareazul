@@ -21,7 +21,7 @@ import bancocrudspringboot.model.Login;
 import bancocrudspringboot.model.Usuario;
 import bancocrudspringboot.repository.UsuarioRepository;
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/v1")
 public class UsuarioController {

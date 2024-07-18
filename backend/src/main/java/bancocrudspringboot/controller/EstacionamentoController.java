@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import bancocrudspringboot.model.Estacionamento;
 import bancocrudspringboot.repository.EstacionamentoRepository;
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/v1")
 public class EstacionamentoController {

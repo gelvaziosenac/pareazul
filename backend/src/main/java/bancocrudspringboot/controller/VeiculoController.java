@@ -23,7 +23,7 @@ import bancocrudspringboot.exception.ResourceNotFoundException;
 import bancocrudspringboot.model.Veiculo;
 import bancocrudspringboot.repository.VeiculoRepository;
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/v1")
 public class VeiculoController {
