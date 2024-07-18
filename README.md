@@ -66,3 +66,17 @@ Desenvolver a atualização das atividades - falta frontend...
 
 ALTERACAO 11
 Publicar a API, precisa testar...
+Bruna:
+https://fly.io/apps/pareazulbruna/monitoring
+
+Adriano:
+https://pareazuladriano.fly.dev/
+
+Prof:
+https://pareazul.fly.dev
+
+mikael
+https://pareazulmikael.fly.dev
+
+vinicius:
+pareazulvinicius.fly.dev
