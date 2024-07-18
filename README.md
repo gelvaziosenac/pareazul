@@ -60,3 +60,9 @@ ALTERACAO 09
 * REPOSITORUeSTACIONAMENTO FUNCAO XXX()
 * REPOSITORUeSTACIONAMENTO FUNCAO XXX()
 * REPOSITORUeSTACIONAMENTO FUNCAO XXX()
+
+ALTERACAO 10 - Se houver tempo...
+Desenvolver a atualização das atividades - falta frontend...
+
+ALTERACAO 11
+Publicar a API, precisa testar...
