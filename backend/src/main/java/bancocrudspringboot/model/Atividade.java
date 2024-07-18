@@ -2,11 +2,6 @@ package bancocrudspringboot.model;
 
 import javax.persistence.*;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 @Entity
 @Table(name = "Atividade")
 public class Atividade {
@@ -41,4 +36,55 @@ public class Atividade {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getVeiculo_id() {
+        return veiculo_id;
+    }
+
+    public void setVeiculo_id(long veiculo_id) {
+        this.veiculo_id = veiculo_id;
+    }
+
+    public long getEstacionamento_id() {
+        return estacionamento_id;
+    }
+
+    public void setEstacionamento_id(long estacionamento_id) {
+        this.estacionamento_id = estacionamento_id;
+    }
+
+    public long getCredito_id() {
+        return credito_id;
+    }
+
+    public void setCredito_id(long credito_id) {
+        this.credito_id = credito_id;
+    }
+
+    public long getCartao_id() {
+        return cartao_id;
+    }
+
+    public void setCartao_id(long cartao_id) {
+        this.cartao_id = cartao_id;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public long getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(long usuario) {
+        this.usuario = usuario;
+    }
 }

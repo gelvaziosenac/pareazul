@@ -6,11 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 @Entity
 @Table(name = "Credito")
 public class Credito {
@@ -23,5 +18,25 @@ public class Credito {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getValor() {
+        return valor;
+    }
+
+    public void setValor(String valor) {
+        this.valor = valor;
+    }
+
+    public long getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(long usuario) {
+        this.usuario = usuario;
     }
 }

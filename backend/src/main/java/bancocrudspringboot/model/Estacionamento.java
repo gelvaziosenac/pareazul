@@ -6,11 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 @Entity
 @Table(name = "Estacionamento")
 public class Estacionamento {
@@ -30,4 +25,55 @@ public class Estacionamento {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(long usuario) {
+        this.usuario = usuario;
+    }
+
+    public long getTempo() {
+        return tempo;
+    }
+
+    public void setTempo(long tempo) {
+        this.tempo = tempo;
+    }
+
+    public String getValorporhora() {
+        return valorporhora;
+    }
+
+    public void setValorporhora(String valorporhora) {
+        this.valorporhora = valorporhora;
+    }
+
+    public String getRegra() {
+        return regra;
+    }
+
+    public void setRegra(String regra) {
+        this.regra = regra;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public long getVeiculo() {
+        return veiculo;
+    }
+
+    public void setVeiculo(long veiculo) {
+        this.veiculo = veiculo;
+    }
 }
