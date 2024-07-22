@@ -15,7 +15,7 @@ function getVersao() {
 }
 
 function isServidorOnline() {
-  return true;
+  return false;
 }
 
 function isAluno() {

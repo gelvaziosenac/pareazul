@@ -1,3 +1,9 @@
+# Instalar FLY WINDOWS 
+pwsh -Command "iwr https://fly.io/install.ps1 -useb | iex"
+
+
+
+
 # FAZER DEPLOY NO FLY.IO
 * 1 - SELECIONAR ARQUIVO POM.XML NO "INTELIJ"
 * 2 - IR DO LADO DIREITO EM MAVEM E IR NA OPÇÃO "Execute Maven Goal" e selecionar "mvn deploy"
