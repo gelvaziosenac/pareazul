@@ -261,8 +261,6 @@ function confirmarAlteracaoSenha() {
         return false;
       }
 
-      // APOS VALIDAR O LOGIN
-      // ALTERA A SENHA
       alterarSenhaUsuario();
     },
     body
@@ -270,17 +268,30 @@ function confirmarAlteracaoSenha() {
 }
 
 function alterarSenhaUsuario() {
-  const senha = document.querySelector("#senha-usuario").value;
+  const senha = document.querySelector("#senha-nova-usuario").value;
+  const senha2 = document.querySelector("#senha-nova-usuario2").value;
+
+  if(senha != senha2){
+    alert("Senhas não conferem!");
+    return false;
+  }
+
   const body = {
     senha: senha,
   };
 
   const id_usuario_logado = document.querySelector("#usuario_logado").value;
-
   callApiPost(
     "PUT",
     "senhausuario/" + id_usuario_logado,
-    function (data) {},
+    function (data) {
+      fecharModalAlterarSenha();
+    },
     body
   );
+}
+
+function fecharModalAlterarSenha() {
+  const fechar = document.querySelector("#modalFecharConfirmacaoSenha");
+  fechar.click();
 }
