@@ -7,7 +7,7 @@
 ## Bruna
 * backend
 * frontend
-
+ 
 ## Vinicius
 * backend
 * frontend
