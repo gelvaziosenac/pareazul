@@ -73,3 +73,13 @@
     * Ao clicar em confirmar(), deve chamar a rota da api de nome "estacionamento"
         * Metodo POST e rota = "perfil" que chama a funcao createCadastro()
         * Deve inserir um novo perfil no banco de dados
+
+
+# Ajustes na Logo
+Deixar uma logo diferente de pare azul
+
+Explicacao frontend  e mudar a logo e criar as atividades
+
+
+
+
