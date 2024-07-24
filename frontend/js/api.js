@@ -11,7 +11,12 @@ function getVersao() {
 }
 
 function isServidorOnline() {
-  return false;
+  var url_atual = window.location.href;
+  if (url_atual.includes("http://127.0.0.1:5500/")) {
+    return false;
+  }
+
+  return true;
 }
 
 function isAluno() {
