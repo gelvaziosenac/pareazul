@@ -69,7 +69,7 @@
 
                         <div class="ant-dropdown-trigger" style="cursor: pointer;"><img src="./index_files/cdbfe0ad1b528f3fec1535d7ceccdbac.png" alt="Imagem do usuário" style="height: 28.69px;">
                             <span class="painel-texto-simples" style="margin-left: 10px;" data-toggle="modal" data-target="#modal-perfil">
-                                <input type="hidden" id="usuario_logado" value="123" disabled>
+                                <input type="text" id="usuario_logado" value="123" disabled>
                                 <span id="nome-usuario-logado">USUARIO BANCO DADOS</span>
                                 <i class="anticon anticon-down" style="margin-left: 5px;">
                                     <svg viewBox="64 64 896 896" class="" data-icon="down" width="1em" height="1em"
@@ -195,9 +195,11 @@
                                             <div class="ant-card-body">
                                                 <div class="ant-row card-creditos">
                                                     <div class="ant-col-12 credito-text">
-                                                        <h1 class="painel-texto-simples">Saldo</h1>
-                                                        <h1 id="SALDO_USUARIO_LOGADO" style="padding-top: 10px; font-weight: bold; padding-bottom: 10px;">
-                                                            R$ 25,00</h1>
+                                                        <h1 class="painel-texto-simples">Saldo:</h1>
+                                                        <h1 style="padding-top: 10px; font-weight: bold; padding-bottom: 10px;">
+                                                            <span>R$ </span>
+                                                            <span id="SALDO_USUARIO_LOGADO"></span>                                                        
+                                                        </h1>
                                                     </div>
 
                                                     <div class="ant-col-12" style="height: 126.9px;">
@@ -304,24 +306,24 @@
                                                                 <br>
                                                                 <select class="form-control" id="tipo-veiculo-sistema">
                                                                     <option value="1">MOTO</option>
-                                                                    <option value="2">CARRO</option>
+                                                                    <option value="2" selected>CARRO</option>
                                                                     <option value="3">CAMINHÃO</option>
                                                                 </select>
                                                             </div>
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" id="placa-veiculo" placeholder="PLACA">
+                                                                <input type="text" class="form-control" id="placa-veiculo" placeholder="PLACA" value="MFI-7814">
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" id="ano-veiculo" placeholder="ANO">
+                                                                <input type="text" class="form-control" id="ano-veiculo" placeholder="ANO" value="2024">
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" id="fabricante-veiculo" placeholder="FABRICANTE">
+                                                                <input type="text" class="form-control" id="fabricante-veiculo" placeholder="FABRICANTE" value="TOYOTA">
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" id="modelo-veiculo" placeholder="MODELO">
+                                                                <input type="text" class="form-control" id="modelo-veiculo" placeholder="MODELO" value="COROLLA ALTIS">
                                                             </div>
                                                         </form>
                                                     </div>
@@ -970,7 +972,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="novo-cartao">Novo Saldo 12</h5>
+                    <h5 class="modal-title" id="novo-cartao">Adicionar Crédito</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -987,7 +989,7 @@
                                         src="./index_files/9761ecc48c469b5d069f73ecf541eedd.png"
                                         style="float: right; height: 21px;"></h4>
                                 <input type="radio" name="novo-saldo-adicionar" class="radio-valor"
-                                    style="margin-top: 15px;margin-left: 15px;" value="2">
+                                    style="margin-top: 15px;margin-left: 15px;" value="2" id="saldo-2">
                             </button>
                         </div>
 
@@ -997,7 +999,7 @@
                                         src="./index_files/9761ecc48c469b5d069f73ecf541eedd.png"
                                         style="float: right; height: 21px;"></h4>
                                 <input type="radio" name="novo-saldo-adicionar" class="radio-valor"
-                                    style="margin-top: 15px;margin-left: 15px;" value="4">
+                                    style="margin-top: 15px;margin-left: 15px;" value="4" id="saldo-4">
                             </button>
                         </div>
                         <div class="ant-col-24">
@@ -1006,16 +1008,16 @@
                                         src="./index_files/9761ecc48c469b5d069f73ecf541eedd.png"
                                         style="float: right; height: 21px;"></h4>
                                 <input type="radio" name="novo-saldo-adicionar" class="radio-valor"
-                                    style="margin-top: 15px;margin-left: 15px;" value="10">
+                                    style="margin-top: 15px;margin-left: 15px;" value="10"  id="saldo-10">
                             </button>
                         </div>
                         <div class="ant-col-24">
                             <button texto="R$ 2,00" type="button" class="ant-btn btn-block-modal ant-btn-block" style="display: flex;">
-                                <h4 id="SALDO_USUARIO_LOGADO" class="simple-text" style="padding-top: 6px;">R$ 25,00<img alt=""
+                                <h4 class="simple-text" style="padding-top: 6px;">R$ 25,00<img alt=""
                                         src="./index_files/9761ecc48c469b5d069f73ecf541eedd.png"
                                         style="float: right; height: 21px;"></h4>
                                 <input type="radio" name="novo-saldo-adicionar" class="radio-valor"
-                                    style="margin-top: 15px;margin-left: 15px;" value="25">
+                                    style="margin-top: 15px;margin-left: 15px;" value="25"  id="saldo-25">
                             </button>
                         </div>
                         <div class="ant-col-24">
@@ -1024,14 +1026,14 @@
                                         src="./index_files/9761ecc48c469b5d069f73ecf541eedd.png"
                                         style="float: right; height: 21px;"></h4>
                                 <input type="radio" name="novo-saldo-adicionar" class="radio-valor"
-                                    style="margin-top: 15px;margin-left: 15px;" value="50">
+                                    style="margin-top: 15px;margin-left: 15px;" value="50"  id="saldo-50">
                             </button>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary">Confirmar 48</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="fecharModalCredito">Fechar</button>
+                    <button type="button" class="btn btn-primary" onclick="atualizaSaldo()">Confirmar</button>
                 </div>
             </div>
         </div>

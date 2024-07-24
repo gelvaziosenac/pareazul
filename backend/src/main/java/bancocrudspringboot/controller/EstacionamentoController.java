@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import bancocrudspringboot.exception.ResourceNotFoundException;
 import bancocrudspringboot.model.Estacionamento;
 import bancocrudspringboot.repository.EstacionamentoRepository;
 
@@ -52,4 +53,12 @@ public class EstacionamentoController {
 		cadastro.setValorporhora("2");
 		return this.estacionamentoRepository.save(cadastro);
 	}
+
+	@GetMapping("/estacionamentousuario/{usuario}")
+	@ResponseStatus(HttpStatus.OK)
+	public List<Estacionamento> getCadastroByUsuario(@PathVariable(value = "usuario") Long usuario)
+	throws ResourceNotFoundException {
+		return estacionamentoRepository.findEstacionamentoByUsuario(usuario);
+	}
+
 }

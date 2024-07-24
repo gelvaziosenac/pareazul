@@ -15,10 +15,9 @@ import org.springframework.stereotype.Repository;
 public interface VeiculoRepository extends JpaRepository<Veiculo, Long>{
     
     @Query(value = "select * from veiculo where placa ilike concat('%', :placa, '%')", nativeQuery = true)
-    List<Veiculo> findVeiculoByPlaca(@Param("placa")String placa);
+    Veiculo findVeiculoByPlaca(@Param("placa")String placa);
 
     List<Veiculo> findVeiculoByTipo(int tipo);
-
     List<Veiculo> findVeiculoByAno(String ano);
 
     @Query(value = "select * from veiculo where fabricante ilike concat('%', :fabricante, '%')", nativeQuery = true)
@@ -27,4 +26,5 @@ public interface VeiculoRepository extends JpaRepository<Veiculo, Long>{
     @Query(value = "select * from veiculo where modelo ilike concat('%', :modelo, '%')", nativeQuery = true)
     List<Veiculo> findVeiculoByModelo(@Param("modelo")String modelo);
     
+    List<Veiculo> findVeiculoByUsuario(Long usuario);
 }

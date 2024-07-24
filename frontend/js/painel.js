@@ -1,23 +1,18 @@
 function atualizaPainel() {
+  atualizaDadosPerfil();
   listarCartoes();
   listarVeiculos();
   listarEstacionamentos();
-  atualizaDadosPerfil();
   listarCreditoAtualizado();
 }
 
-function listarCreditoAtualizado(){
+function listarCreditoAtualizado() {
   const usuario_logado = localStorage.getItem("usuario_logado");
   const method = "GET";
   const rota = "creditousuario/" + usuario_logado;
   callApi(method, rota, function (data) {
-
-
-      console.log("CREDITO DO USUARIO:" + data.valor  );
-      console.log(data);
-
-      let SALDO_USUARIO_LOGADO = data.valor;        
-      document.querySelector("#SALDO_USUARIO_LOGADO").innerHTML = "R$ " + formataNum(SALDO_USUARIO_LOGADO);
+    let SALDO_USUARIO_LOGADO = data.valor;
+    document.querySelector("#SALDO_USUARIO_LOGADO").innerHTML = formataNum(SALDO_USUARIO_LOGADO);
   });
 }
 
@@ -57,29 +52,34 @@ function listarEstacionamentos() {
 
 function cardEstacionamento() {
   const method = "GET";
-  const rota = "estacionamentoordenado";
+  const id_usuario_logado = document.querySelector("#usuario_logado").value;
+  const rota = "estacionamentousuario/"+id_usuario_logado;
   callApi(method, rota, function (aListaDados) {
-    console.log(aListaDados);
-    loadDadosEstacionamento(aListaDados);
+      console.log(aListaDados);    
+      loadDadosEstacionamento(aListaDados);        
   });
 }
 
 function cardCartao() {
   const method = "GET";
-  const rota = "cartao";
-  callApi(method, rota, function (aListaDados) {
-    console.log(aListaDados);
-    loadDadosCartao(aListaDados);
-  });
+    const id_usuario_logado = document.querySelector("#usuario_logado").value;
+    const rota = "cartaousuario/"+id_usuario_logado;
+    callApi(method, rota, function (aListaDados) {
+        console.log(aListaDados);    
+        loadDadosCartao(aListaDados);        
+    });
 }
 
 function cardVeiculo() {
   const method = "GET";
-  const rota = "veiculo";
-  callApi(method, rota, function (aListaVeiculos) {
-    console.log(aListaVeiculos);
-    loadDadosVeiculo(aListaVeiculos);
-  });
+    const id_usuario_logado = parseInt(document.querySelector("#usuario_logado").value);
+    const rota = "veiculousuario/" + id_usuario_logado;
+
+    console.log("ROTA:" + rota);
+    callApi(method, rota, function (aListaVeiculos) {
+        console.log(aListaVeiculos);    
+        loadDadosVeiculo(aListaVeiculos);        
+    });
 }
 
 function loadDadosEstacionamento(aListaDados) {
@@ -381,13 +381,17 @@ function excluirCartao(codigo) {
 }
 
 function confirmarVeiculo() {
+  console.log("Gravando usuario no Banco de Dados...");
+
   const tipo = parseInt(document.querySelector("#tipo-veiculo-sistema").value);
   const placa = document.querySelector("#placa-veiculo").value;
   const ano = document.querySelector("#ano-veiculo").value;
   const fabricante = document.querySelector("#fabricante-veiculo").value;
   const modelo = document.querySelector("#modelo-veiculo").value;
 
+  const usuario_logado = localStorage.getItem("usuario_logado");
   let body = {
+    usuario:usuario_logado,
     tipo,
     placa: placa.toUpperCase(),
     ano,
@@ -395,6 +399,7 @@ function confirmarVeiculo() {
     modelo,
   };
 
+  console.log("BODY");
   console.log(body);
 
   const method = "POST";
@@ -405,7 +410,7 @@ function confirmarVeiculo() {
     function (data) {
       console.log("Veiculo gravado!" + JSON.stringify(data));
       fecharModalVeiculo();
-      listarVeiculos();
+      atualizaPainel();
     },
     body
   );
@@ -419,13 +424,13 @@ function confirmarCartao() {
 
   numero = numero.trim();
 
-  let body = {
-    // removido espaço da string com trim()
+  const usuario_logado = localStorage.getItem("usuario_logado");
+  let body = {  
+    usuario:usuario_logado,
     numero: numero.trim(),
     nome: nome,
     dataexpiracao: dataexpiracao,
-    cvv: cvv,
-    usuario: 1,
+    cvv: cvv    
   };
 
   console.log(body);
@@ -444,33 +449,32 @@ function confirmarCartao() {
   );
 }
 
-function confirmarEstacionamento(veiculo_id) {
-  const endereco = document.querySelector(
-    "#endereco-estacionamento-" + veiculo_id
-  ).value;
-  const regra = document.querySelector(
-    "#regra-estacionamento-" + veiculo_id
-  ).value;
 
-  const tempo_30_min = document.querySelector(
-    "#tempo-30-min-estacionamento-" + veiculo_id
-  );
-  const tempo_60_min = document.querySelector(
-    "#tempo-60-min-estacionamento-" + veiculo_id
-  );
+function confirmarEstacionamento(veiculo_id){
+  const endereco = document.querySelector("#endereco-estacionamento-" + veiculo_id).value;
+  const regra = document.querySelector("#regra-estacionamento-" + veiculo_id).value;
+
+  const tempo_30_min = document.querySelector("#tempo-30-min-estacionamento-" + veiculo_id);
+  const tempo_60_min = document.querySelector("#tempo-60-min-estacionamento-" + veiculo_id);
+
+  var saldo = getFloatValue(document.querySelector("#SALDO_USUARIO_LOGADO").textContent);
 
   let tempo = 0;
-  if (tempo_30_min.checked) {
-    tempo = 30;
-  } else if (tempo_60_min.checked) {
-    tempo = 60;
+  if(tempo_30_min.checked){
+      tempo = 30;
+      saldo = saldo - 1.00;
+  } else if(tempo_60_min.checked){
+      tempo = 60;
+      saldo = saldo - 2.00;
   }
 
-  let body = {
-    veiculo: veiculo_id,
-    endereco,
-    regra,
-    tempo,
+  const usuario_logado = localStorage.getItem("usuario_logado");
+  let body = {  
+      usuario:usuario_logado,  
+      veiculo:veiculo_id,     
+      endereco,
+      regra,
+      tempo
   };
 
   console.log(body);
@@ -478,18 +482,47 @@ function confirmarEstacionamento(veiculo_id) {
   const method = "POST";
   const rota = "estacionamento";
   callApiPost(
-    method,
-    rota,
-    function (data) {
-      console.log("Estacionamento gravado!" + JSON.stringify(data));
+      method,
+      rota,
+      function (data) {
+          console.log("Estacionamento gravado!" + JSON.stringify(data));
 
-      const veiculo_id = data.veiculo;
-      console.log("veiculo_id:" + veiculo_id);
+          const veiculo_id = data.veiculo;
+          console.log("veiculo_id:" + veiculo_id);
 
-      fecharModalEstacionamento(veiculo_id);
-      listarEstacionamentos();
-    },
-    body
+          atualizaSaldoEstacionamento(saldo,veiculo_id);
+             
+      },
+      body   
+  );
+}
+
+function atualizaSaldoEstacionamento(saldo,veiculo_id){
+  // 1- BUSCAR O CREDITO DO USUARIO ATUAL
+  const usuario_logado = localStorage.getItem("usuario_logado");
+  callApi(
+      "GET",
+      "creditousuario/"+ usuario_logado,
+      function (data) {
+          id_credito = data.id;
+
+          const body = {
+              id: id_credito,
+              valor: saldo,
+              
+          }
+
+          callApiPost(
+              method = "PUT",
+              rota = "atualizasaldo/" + id_credito,
+              function (data) {
+                  alert("Credito atualizado!");
+                  fecharModalEstacionamento(veiculo_id);
+                  atualizaPainel();
+              },
+              body
+          );
+      },
   );
 }
 
@@ -507,5 +540,71 @@ function fecharModalEstacionamento(veiculo_id) {
   const fechar = document.querySelector(
     "#fechar-modal-estacionamento-" + veiculo_id
   );
+  fechar.click();
+}
+
+function atualizaSaldo() {
+
+  let saldo_inicial = document.querySelector("#SALDO_USUARIO_LOGADO").textContent;
+  saldo_inicial = getFloatValue(saldo_inicial);
+
+  let saldo_atualizado = 0;
+  let saldo_adicionar = 0;
+
+  let valor_2 = document.getElementById("saldo-2");
+  if (valor_2.checked == true) {
+    saldo_adicionar = 2;
+  }
+
+  let valor_4 = document.getElementById("saldo-4");
+  if (valor_4.checked == true) {
+    saldo_adicionar = 4;
+  }
+
+  let valor_10 = document.getElementById("saldo-10");
+  if (valor_10.checked == true) {
+    saldo_adicionar = 10;
+  }
+
+  let valor_25 = document.getElementById("saldo-25");
+  if (valor_25.checked == true) {
+    saldo_adicionar = 25;
+  }
+
+  let valor_50 = document.getElementById("saldo-50");
+  if (valor_50.checked == true) {
+    saldo_adicionar = 50;
+  }
+
+  saldo_atualizado = saldo_inicial + getFloatValue(saldo_adicionar);
+
+  atualizaSaldoSistema(saldo_atualizado);
+}
+
+function atualizaSaldoSistema(saldo_atualizado) {
+  console.log("SALDO ATUALIZADO:" + saldo_atualizado);
+
+  const usuario_logado = document.querySelector("#usuario_logado").value;
+  const body = {
+    usuario: usuario_logado,
+    valor: saldo_atualizado
+  }
+
+  const method = "POST";
+  const rota = "atualizasaldo";
+  callApiPost(
+    method,
+    rota,
+    function (data) {
+      console.log("Saldo atualizado!" + JSON.stringify(data));
+      fecharModalCredito();
+      atualizaPainel();
+    },
+    body
+  );
+}
+
+function fecharModalCredito() {
+  const fechar = document.querySelector("#fecharModalCredito");
   fechar.click();
 }

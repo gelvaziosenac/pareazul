@@ -201,12 +201,12 @@ function resetsenha() {
 }
 
 function confirmarUsuario() {
-  const nome = document.querySelector("#nome-usuario").value;
-  const cpf = document.querySelector("#cpf-usuario").value;
+  const nome     = document.querySelector("#nome-usuario").value;
+  const cpf      = document.querySelector("#cpf-usuario").value;
   const telefone = document.querySelector("#telefone-usuario").value;
-  const email = document.querySelector("#email-usuario").value;
-  const senha = document.querySelector("#senha-usuario").value;
-  const senha2 = document.querySelector("#senha-usuario2").value;
+  const email    = document.querySelector("#email-usuario").value;
+  const senha    = document.querySelector("#senha-usuario").value;
+  const senha2   = document.querySelector("#senha-usuario2").value;
 
   if (senha != senha2) {
     alert("Senhas não conferem!");

@@ -53,8 +53,13 @@ public class VeiculoController {
 	// Inserir veiculo
 	@PostMapping("/veiculo")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Veiculo createCadastro(@RequestBody Veiculo cadastro) {
-		return this.veiculoRepository.save(cadastro);
+	public Veiculo createCadastro(@RequestBody Veiculo cadastroFrontend) {		
+		Veiculo veiculoAtualBancoDados = veiculoRepository.findVeiculoByPlaca(cadastroFrontend.getPlaca());		
+		if(veiculoAtualBancoDados != null){
+			return this.veiculoRepository.save(veiculoAtualBancoDados);
+		}
+
+		return this.veiculoRepository.save(cadastroFrontend);
 	}
 
 	/// alterar veiculo
@@ -89,6 +94,13 @@ public class VeiculoController {
 		resposta.put("cadastro deletado", Boolean.TRUE);
 
 		return resposta;
+	}
+
+	@GetMapping("/veiculousuario/{usuario}")
+	@ResponseStatus(HttpStatus.OK)
+	public List<Veiculo> getCadastroByUsuario(@PathVariable(value = "usuario") Long usuario)
+	throws ResourceNotFoundException {
+		return veiculoRepository.findVeiculoByUsuario(usuario);
 	}
 
 }

@@ -15,3 +15,9 @@
 ## Mikael
 * backend
 * frontend
+
+## Faltas Alunos 
+### 23-07-2024
+    Helton
+    Pamela
+    

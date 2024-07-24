@@ -13,5 +13,6 @@ public interface EstacionamentoRepository extends JpaRepository<Estacionamento, 
     @Query(value = "select * from estacionamento order by id desc", nativeQuery = true)
     List<Estacionamento> findAllOrderByIdDesc();
 
-    List<Estacionamento> findEstacionamentoByVeiculo(Long veiculo);    
+    List<Estacionamento> findEstacionamentoByVeiculo(Long veiculo);   
+    List<Estacionamento> findEstacionamentoByUsuario(Long usuario);  
 }

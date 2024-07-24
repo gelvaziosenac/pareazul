@@ -7,10 +7,6 @@ function getUrlBase() {
 }
 
 function getVersao() {
-  if (isAluno()) {
-    return "";
-  }
-
   return "v1/";
 }
 
@@ -32,6 +28,7 @@ function getHeaders() {
 function callApi(method, rota, fn = false) {
   const url = getUrlBase() + getVersao() + rota;
 
+  console.log("URL CHAMADA:" + url);
   try {
     fetch(url, {
       method: method, // *GET, POST, PUT, DELETE, etc.
@@ -62,7 +59,8 @@ function callApi(method, rota, fn = false) {
 function callApiPost(method, rota, fn = false, body = false) {
   const url = getUrlBase() + getVersao() + rota;
 
-  console.log("url chamada:" + url);
+  console.log("URL CHAMADA:" + url);
+
   try {
     fetch(url, {
       method: method, // *GET, POST, PUT, DELETE, etc.

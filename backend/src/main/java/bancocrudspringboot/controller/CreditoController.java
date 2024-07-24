@@ -32,7 +32,7 @@ public class CreditoController {
 		return creditoRepository.findCreditoByUsuario(usuario);
 	}
 
-	// alterar credito  
+	// alterar credito pelo id
 	@PutMapping("/atualizasaldo/{credito_id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Credito> updateCadastro(@PathVariable(value = "credito_id") Long cadastroId,
@@ -46,8 +46,23 @@ public class CreditoController {
 
 		return ResponseEntity.ok(this.creditoRepository.save(cadastro));
 	}
+
+	// Atualiza saldo do usuario
+	@PostMapping("/atualizasaldo")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Credito atualizaSaldo(@RequestBody Credito cadastroFrontend) {		
+		long usuario = cadastroFrontend.getUsuario();
+		
+		// Atualizando o saldo
+		Credito creditoAtualBancoDados = creditoRepository.findCreditoByUsuario(usuario);		
+		if(creditoAtualBancoDados != null){
+			// Atualizar o saldo existente
+			creditoAtualBancoDados.setValor(cadastroFrontend.getValor());
+
+			return this.creditoRepository.save(creditoAtualBancoDados);
+		}
+
+		// Insere um novo saldo, quando nao existe nenhum saldo no banco de dados
+		return this.creditoRepository.save(cadastroFrontend);
+	}
 }
-
-
-
-
