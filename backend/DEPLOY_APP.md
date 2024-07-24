@@ -14,3 +14,13 @@ pwsh -Command "iwr https://fly.io/install.ps1 -useb | iex"
 * ``` fly launch --now```
 * 6 - Se for uma atualizacao, usar o comando abaixo:
 * ``` fly deploy ```
+
+## MOSTRAR DEPLOY DE CADA PROJETO EM SALA DE AULA
+USAR CARTAO DE CASA- VERIFICAR....
+PEGAR USUARIO POR EQUIPE
+
+
+
+
+
+
