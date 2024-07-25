@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="atualizaCep()">
+    <h1>Dados Cep</h1>
+    <label for="meu-cep">Cep:</label>
+    <input type="text" id="meu-cep" value="89160328">
+
+    <button onclick="atualizaCep()">Buscar Dados Cep</button>
+
+    <h3 id="dados"></h3>
+</body>
+
+<script src="js/api.js"></script>
+
+<script>
+    // https://viacep.com.br/ws/89160328/json/
+    // chamar a api de cep
+
+    function atualizaCep() {
+        const cep = document.querySelector("#meu-cep").value
+        const method = "GET";
+        const rota = "https://viacep.com.br/ws/" + cep +"/json/";
+        callApiCep(method, rota, function (data) {
+            console.log(data);
+
+            document.querySelector("#dados").innerHTML = JSON.stringify(data);
+        });
+    }
+
+</script>
+</html>
