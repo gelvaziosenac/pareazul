@@ -9,5 +9,8 @@ import java.util.*;
 
 @Repository
 public interface CartaoRepository extends JpaRepository<Cartao, Long>{
-    List<Cartao> findCartaoByUsuario(Long usuario);
+    List<Cartao> findCartaoByUsuario(Long usuario_id);
+
+    // List<Cartao> find          Cartao By Usuario(Long usuario);
+    //              SELECT * FROM cartao where usuario = 1  --parametro_usuario
 }

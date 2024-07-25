@@ -7,8 +7,7 @@ public class ErrorDetails {
 	private Date data;
 	private String mensagem;
 	private String detalhes;
-	
-	
+		
 	public ErrorDetails(Date data, String mensagem, String detalhes) {
 		super();
 		this.data = data;

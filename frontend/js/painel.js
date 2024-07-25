@@ -1,8 +1,10 @@
 function atualizaPainel() {
   atualizaDadosPerfil();
+  
   listarCartoes();
   listarVeiculos();
   listarEstacionamentos();
+
   listarCreditoAtualizado();
 }
 
@@ -34,7 +36,7 @@ function atualizaDadosPerfil() {
       document.querySelector("#email-usuario").value = email_usuario_logado;
     });
   } else {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   }
 }
 
@@ -448,7 +450,6 @@ function confirmarCartao() {
     body
   );
 }
-
 
 function confirmarEstacionamento(veiculo_id){
   const endereco = document.querySelector("#endereco-estacionamento-" + veiculo_id).value;
